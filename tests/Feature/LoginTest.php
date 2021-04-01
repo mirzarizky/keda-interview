@@ -20,7 +20,7 @@ class LoginTest extends TestCase
         $this->seed([UserTypeSeeder::class]);
         $user = User::factory()->create();
 
-        $response = $this->post('/api/auth/login', [
+        $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
             'password' => 'password'
         ]);
@@ -36,7 +36,7 @@ class LoginTest extends TestCase
         $this->seed([UserTypeSeeder::class]);
         $user = User::factory()->create();
 
-        $response = $this->post('/api/auth/login', [
+        $response = $this->postJson('/api/auth/login', [
             'email' => $user->email,
             'password' => 'wrong-password'
         ]);
