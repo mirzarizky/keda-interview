@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,8 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::post('register', 'AuthController@register');
-    Route::post('login', 'AuthController@login');
-    
-    Route::get('userList','AuthController@getUserList');
+    Route::post('login', LoginController::class);
 });
