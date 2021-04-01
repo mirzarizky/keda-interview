@@ -18,7 +18,7 @@ class AddForeignKeysToUsersTable extends Migration
                 ->references('id')
                 ->on('user_types')
                 ->onUpdate('NO ACTION')
-                ->onDelete('SET NULL');
+                ->onDelete('SET NULL'); // to set null on delete, make sure related field is nullable
         });
     }
 
