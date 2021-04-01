@@ -22,4 +22,18 @@ class User extends Authenticable
     protected $hidden = [
         'password'
     ];
+
+    protected $with = ['type'];
+
+    // Scopes
+    public function scopeTypeCustomer($query)
+    {
+        return $query->where('user_type_id', 1);
+    }
+
+    // Relationships
+    public function type()
+    {
+        return $this->belongsTo(UserType::class, 'user_type_id');
+    }
 }

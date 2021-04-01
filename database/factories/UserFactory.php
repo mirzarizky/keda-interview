@@ -30,15 +30,43 @@ class UserFactory extends Factory
     }
 
     /**
-     * Indicate that the model's email address should be unverified.
+     * Indicate that the user is customer
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory
      */
-    public function unverified()
+    public function customer()
     {
         return $this->state(function (array $attributes) {
             return [
-                'email_verified_at' => null,
+                'user_type_id' => 1,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the user is customer
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function staff()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'user_type_id' => 2,
+            ];
+        });
+    }
+
+    /**
+     * Indicate that the user is deleted
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function deleted()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'deleted_at' => now(),
             ];
         });
     }

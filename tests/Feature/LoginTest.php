@@ -41,6 +41,6 @@ class LoginTest extends TestCase
             'password' => 'wrong-password'
         ]);
 
-        $response->assertSessionHasErrors(['email']);
+        $response->assertJsonValidationErrors(['email']);
     }
 }

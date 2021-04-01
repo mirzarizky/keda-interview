@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
+use App\Http\Controllers\Api\CustomerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,5 +24,9 @@ Route::group(['prefix' => 'auth'], function () {
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('logout', LogoutController::class);
+    });
+
+    Route::middleware('user_type:Staff')->group(function () {
+        Route::apiResource('customer', CustomerController::class)->only(['index', 'destroy']);
     });
 });
