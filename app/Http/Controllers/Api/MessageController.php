@@ -24,19 +24,39 @@ class MessageController extends Controller
 
         $sender = auth()->user();
         $receiver = User::findOrFail($request->receiver_id);
-//        dd($receiver->isStaff());
 
         abort_if(
             $receiver->isStaff() && !$sender->isStaff(),
-            403
+            403,
+            'You don\'t have permission to access this resource.'
         );
 
         $newMessage = Message::create([
-           'message' => $request->message,
-           'receiver_id' => $request->receiver_id,
-           'sender_id'  => $sender->id
+            'message' => $request->message,
+            'receiver_id' => $request->receiver_id,
+            'sender_id' => $sender->id
         ]);
 
         return response()->json($newMessage, 201);
+    }
+
+    public function index()
+    {
+        $user = auth()->user();
+
+        $messages = Message::where(function ($query) use ($user) {
+            $query->where('sender_id', $user->id)
+                ->orWhere('receiver_id', $user->id);
+        })
+            ->get();
+
+        return response()->json($messages);
+    }
+
+    public function getAllMessages()
+    {
+        $messages = Message::all();
+
+        return response()->json($messages);
     }
 }

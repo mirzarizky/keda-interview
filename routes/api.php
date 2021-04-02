@@ -29,9 +29,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::middleware('user_type:Staff')->group(function () {
         Route::apiResource('customer', CustomerController::class)->only(['index', 'destroy']);
+        Route::get('all-messages', [MessageController::class, 'getAllMessages']);
     });
 
     Route::middleware('user_type:Staff,Customer')->group(function () {
+        Route::get('messages', [MessageController::class, 'index']);
         Route::post('message', [MessageController::class, 'sendMessage']);
     });
 });
