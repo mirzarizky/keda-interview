@@ -1,4 +1,14 @@
 <h1> Laravel Back End Keda Interview Manual</h1>
+
+## Postman docs
+Here is the link to the api documentation : <br />
+[postman-api-docs](https://documenter.getpostman.com/view/3440175/TzCP7nZm) <br />
+or import `public/keda tech interview.postman_collection.json` to your postman app <br />
+**Notes**: make sure to check the environment variable in postman app. Some env variables are:
+- `api_url`
+- `access_token`
+- `customer_id`
+
 ## Guidelines to do the project's
 There are several prerequisite apps/packages before making this project, such as: <br>
 1. PHP                  : version that is used on this project is PHP 7.4.14 <br>

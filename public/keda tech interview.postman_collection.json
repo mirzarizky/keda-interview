@@ -1,0 +1,1861 @@
+{
+	"info": {
+		"_postman_id": "ded63599-2c93-44e9-8a50-32bbf39fcf38",
+		"name": "keda tech interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "customer@gmail.com",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "dummydummy",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/auth/login",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "customer@gmail.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "dummydummy",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/auth/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:35:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:35:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"id\": 3,\n        \"user_type_id\": 1,\n        \"email\": \"customer@gmail.com\",\n        \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n        \"updated_at\": null,\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    \"access_token\": \"2|1abZ8uY92NTm3OWrqPBnGXoJwnys8EnaQalZzG9q\"\n}"
+				},
+				{
+					"name": "Login failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "customer@gmail.com",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "wrong-password",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/auth/login",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:33:49 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:33:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The given data was invalid.\",\n    \"errors\": {\n        \"email\": [\n            \"Incorrect email or password.\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/auth/logout",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "guest logout (failed)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/auth/logout",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:39:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:39:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+				},
+				{
+					"name": "Logout success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/auth/logout",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:37:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:37:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/customer",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/customer",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:46:14 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:46:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"user_type_id\": 1,\n        \"email\": \"customer@gmail.com\",\n        \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n        \"updated_at\": null,\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 5,\n        \"user_type_id\": 1,\n        \"email\": \"hayley.herman@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 6,\n        \"user_type_id\": 1,\n        \"email\": \"heller.jacquelyn@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 7,\n        \"user_type_id\": 1,\n        \"email\": \"regan.doyle@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 8,\n        \"user_type_id\": 1,\n        \"email\": \"rowena.langosh@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 9,\n        \"user_type_id\": 1,\n        \"email\": \"roslyn31@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 10,\n        \"user_type_id\": 1,\n        \"email\": \"kari.ullrich@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 11,\n        \"user_type_id\": 1,\n        \"email\": \"ferry.jermaine@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 12,\n        \"user_type_id\": 1,\n        \"email\": \"elijah19@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 13,\n        \"user_type_id\": 1,\n        \"email\": \"earline.bernhard@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 14,\n        \"user_type_id\": 1,\n        \"email\": \"bartholome.jenkins@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 15,\n        \"user_type_id\": 1,\n        \"email\": \"don76@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 16,\n        \"user_type_id\": 1,\n        \"email\": \"hjohnson@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 17,\n        \"user_type_id\": 1,\n        \"email\": \"zora29@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 18,\n        \"user_type_id\": 1,\n        \"email\": \"geovanny.reichel@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 19,\n        \"user_type_id\": 1,\n        \"email\": \"johan.kuhn@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 20,\n        \"user_type_id\": 1,\n        \"email\": \"kherman@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 21,\n        \"user_type_id\": 1,\n        \"email\": \"wwaters@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 22,\n        \"user_type_id\": 1,\n        \"email\": \"waters.jeramy@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 23,\n        \"user_type_id\": 1,\n        \"email\": \"omante@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 24,\n        \"user_type_id\": 1,\n        \"email\": \"nondricka@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    }\n]"
+				},
+				{
+					"name": "customer + deleted",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/customer",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:48:39 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:48:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"user_type_id\": 1,\n        \"email\": \"customer@gmail.com\",\n        \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n        \"updated_at\": null,\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 5,\n        \"user_type_id\": 1,\n        \"email\": \"hayley.herman@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 6,\n        \"user_type_id\": 1,\n        \"email\": \"heller.jacquelyn@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 7,\n        \"user_type_id\": 1,\n        \"email\": \"regan.doyle@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 8,\n        \"user_type_id\": 1,\n        \"email\": \"rowena.langosh@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 9,\n        \"user_type_id\": 1,\n        \"email\": \"roslyn31@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 10,\n        \"user_type_id\": 1,\n        \"email\": \"kari.ullrich@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 11,\n        \"user_type_id\": 1,\n        \"email\": \"ferry.jermaine@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 12,\n        \"user_type_id\": 1,\n        \"email\": \"elijah19@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 13,\n        \"user_type_id\": 1,\n        \"email\": \"earline.bernhard@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 14,\n        \"user_type_id\": 1,\n        \"email\": \"bartholome.jenkins@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 15,\n        \"user_type_id\": 1,\n        \"email\": \"don76@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 16,\n        \"user_type_id\": 1,\n        \"email\": \"hjohnson@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 17,\n        \"user_type_id\": 1,\n        \"email\": \"zora29@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 18,\n        \"user_type_id\": 1,\n        \"email\": \"geovanny.reichel@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 19,\n        \"user_type_id\": 1,\n        \"email\": \"johan.kuhn@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 20,\n        \"user_type_id\": 1,\n        \"email\": \"kherman@example.org\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 21,\n        \"user_type_id\": 1,\n        \"email\": \"wwaters@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 22,\n        \"user_type_id\": 1,\n        \"email\": \"waters.jeramy@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 23,\n        \"user_type_id\": 1,\n        \"email\": \"omante@example.net\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 24,\n        \"user_type_id\": 1,\n        \"email\": \"nondricka@example.com\",\n        \"created_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"updated_at\": \"2021-04-02T08:46:05.000000Z\",\n        \"deleted_at\": null,\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 25,\n        \"user_type_id\": 1,\n        \"email\": \"camilla.stoltenberg@example.com\",\n        \"created_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"updated_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"deleted_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 29,\n        \"user_type_id\": 1,\n        \"email\": \"emilie.batz@example.org\",\n        \"created_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"updated_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"deleted_at\": \"2021-04-02T08:47:50.000000Z\",\n        \"type\": {\n            \"id\": 1,\n            \"name\": \"Customer\",\n            \"created_at\": \"2021-04-01T00:00:00.000000Z\",\n            \"updated_at\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "delete customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/customer/{{customer_id}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"customer",
+						"{{customer_id}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete customer success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/customer/{{customer_id}}",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"customer",
+								"{{customer_id}}"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:52:26 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 08:52:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "all messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/all-messages",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"all-messages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "cust access all message (failed)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/all-messages",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"all-messages"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:31:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:31:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You don't have permission to access this resource.\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1116,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\app\\\\Http\\\\Middleware\\\\UserTypeMiddleware.php\",\n            \"line\": 27,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\UserTypeMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 103,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 55,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 44,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 34,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 697,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 672,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 636,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 625,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 166,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fideloper\\\\proxy\\\\src\\\\TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 141,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 110,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\public\\\\index.php\",\n            \"line\": 52,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\server.php\",\n            \"line\": 21,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "all messages",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/all-messages",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"all-messages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:17:32 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:17:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"message\": \"Et sequi non minus sit. Quidem dicta nulla consequatur voluptatem. Quam voluptatem ad doloribus perspiciatis amet et.\",\n        \"receiver_id\": 30,\n        \"sender_id\": 31,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"message\": \"Qui et voluptatem iure architecto. Explicabo veritatis omnis quidem dolorum non. Pariatur quas a vel quidem error est expedita.\",\n        \"receiver_id\": 32,\n        \"sender_id\": 33,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"message\": \"Nihil et expedita architecto voluptas dolorum est non. Quia omnis modi nesciunt rerum voluptatem. Porro et aut reprehenderit enim.\",\n        \"receiver_id\": 34,\n        \"sender_id\": 35,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"message\": \"Et nesciunt ut et ad aut sed corporis. Dolores eum ut sapiente iste perferendis eligendi praesentium. Dolores quod exercitationem delectus ea error aut. Quia id quis id ut.\",\n        \"receiver_id\": 36,\n        \"sender_id\": 37,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"message\": \"Earum perferendis reiciendis consequatur impedit vero aliquam. Sed vel aut et sint. Repudiandae tenetur aut nam molestias dolor est cupiditate. Dolores omnis enim sunt doloribus blanditiis.\",\n        \"receiver_id\": 38,\n        \"sender_id\": 39,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"message\": \"Repellendus est quisquam sequi rem. Exercitationem assumenda et voluptatum. Explicabo quas ipsa magnam fuga ea ipsam. Quaerat reprehenderit non et rerum architecto aspernatur voluptate.\",\n        \"receiver_id\": 40,\n        \"sender_id\": 41,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"message\": \"Occaecati placeat minima ut cupiditate possimus veritatis unde. Assumenda quam voluptatem aut porro sint est. Omnis vel consectetur dolores aut ut qui. Modi et est et non minus sunt.\",\n        \"receiver_id\": 42,\n        \"sender_id\": 43,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 8,\n        \"message\": \"Commodi aut quis dolores ipsa atque. Et et omnis vitae quia. Sint omnis placeat consequuntur aspernatur. Omnis accusamus quaerat aperiam magni voluptas autem velit. Error sunt laudantium eligendi voluptas.\",\n        \"receiver_id\": 44,\n        \"sender_id\": 45,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 9,\n        \"message\": \"Qui quisquam corporis optio voluptatem id neque modi. Et facere at quasi blanditiis ratione sint. Consequatur rerum officiis beatae et totam.\",\n        \"receiver_id\": 46,\n        \"sender_id\": 47,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 10,\n        \"message\": \"Eos odio non suscipit animi nihil culpa qui dicta. Minima voluptas a sit qui omnis. Dolorem non id quo doloribus. Quibusdam praesentium officiis a fugit exercitationem.\",\n        \"receiver_id\": 48,\n        \"sender_id\": 49,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 11,\n        \"message\": \"Nam cum est praesentium qui et quidem eaque consequatur. Facere optio facilis dolor esse quo. Amet sit saepe voluptatem molestias sequi laboriosam.\",\n        \"receiver_id\": 50,\n        \"sender_id\": 51,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 12,\n        \"message\": \"Nisi est asperiores qui occaecati ut omnis id ducimus. Laudantium illum et sapiente labore aut. Repudiandae laboriosam sit qui. Adipisci consequatur natus laborum dolorem aspernatur ex sequi.\",\n        \"receiver_id\": 52,\n        \"sender_id\": 53,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 13,\n        \"message\": \"Consectetur numquam ut at. Deserunt omnis et fugit enim dolor quo quod. Nobis qui molestiae rerum rerum qui alias. Rerum asperiores rerum nemo saepe in dicta eveniet.\",\n        \"receiver_id\": 54,\n        \"sender_id\": 55,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 14,\n        \"message\": \"Dicta dolor dolorum reprehenderit ipsam ea quia. Praesentium repudiandae ipsum quaerat est voluptate. Facere vero harum rem iste autem provident. Facilis totam ut odit.\",\n        \"receiver_id\": 56,\n        \"sender_id\": 57,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 15,\n        \"message\": \"Sed pariatur consequuntur expedita cupiditate. Cumque vel ut rerum perspiciatis maxime. Rerum ad et eos placeat provident. Consequatur nulla voluptatum qui nostrum.\",\n        \"receiver_id\": 58,\n        \"sender_id\": 59,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 16,\n        \"message\": \"Non quo nihil ab suscipit vero. Nulla ducimus officia ea molestiae. Aliquid eaque debitis accusamus explicabo dolorum ut. Dolores omnis aliquam repudiandae porro reiciendis cum repudiandae qui.\",\n        \"receiver_id\": 60,\n        \"sender_id\": 61,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 17,\n        \"message\": \"Quas consequatur vitae et maiores omnis nam. Vel veritatis culpa ratione veritatis architecto. Qui et earum sint.\",\n        \"receiver_id\": 62,\n        \"sender_id\": 63,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 18,\n        \"message\": \"Alias laborum voluptates qui non. Omnis sint saepe voluptates qui perspiciatis. Vero sint nesciunt voluptates ipsum et. Consequatur dolores facilis culpa aut laborum.\",\n        \"receiver_id\": 64,\n        \"sender_id\": 65,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 19,\n        \"message\": \"Dignissimos quaerat adipisci assumenda. Tempora non non nihil. Qui qui alias quo veniam repudiandae ut dolor.\",\n        \"receiver_id\": 66,\n        \"sender_id\": 67,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 20,\n        \"message\": \"Amet qui non in et numquam non ea et. Soluta repudiandae cupiditate voluptas est voluptates ad.\",\n        \"receiver_id\": 68,\n        \"sender_id\": 69,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "own messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{api_url}}/messages",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "all messages",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/all-messages",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"all-messages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:17:32 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:17:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"message\": \"Et sequi non minus sit. Quidem dicta nulla consequatur voluptatem. Quam voluptatem ad doloribus perspiciatis amet et.\",\n        \"receiver_id\": 30,\n        \"sender_id\": 31,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"message\": \"Qui et voluptatem iure architecto. Explicabo veritatis omnis quidem dolorum non. Pariatur quas a vel quidem error est expedita.\",\n        \"receiver_id\": 32,\n        \"sender_id\": 33,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"message\": \"Nihil et expedita architecto voluptas dolorum est non. Quia omnis modi nesciunt rerum voluptatem. Porro et aut reprehenderit enim.\",\n        \"receiver_id\": 34,\n        \"sender_id\": 35,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 4,\n        \"message\": \"Et nesciunt ut et ad aut sed corporis. Dolores eum ut sapiente iste perferendis eligendi praesentium. Dolores quod exercitationem delectus ea error aut. Quia id quis id ut.\",\n        \"receiver_id\": 36,\n        \"sender_id\": 37,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 5,\n        \"message\": \"Earum perferendis reiciendis consequatur impedit vero aliquam. Sed vel aut et sint. Repudiandae tenetur aut nam molestias dolor est cupiditate. Dolores omnis enim sunt doloribus blanditiis.\",\n        \"receiver_id\": 38,\n        \"sender_id\": 39,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 6,\n        \"message\": \"Repellendus est quisquam sequi rem. Exercitationem assumenda et voluptatum. Explicabo quas ipsa magnam fuga ea ipsam. Quaerat reprehenderit non et rerum architecto aspernatur voluptate.\",\n        \"receiver_id\": 40,\n        \"sender_id\": 41,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 7,\n        \"message\": \"Occaecati placeat minima ut cupiditate possimus veritatis unde. Assumenda quam voluptatem aut porro sint est. Omnis vel consectetur dolores aut ut qui. Modi et est et non minus sunt.\",\n        \"receiver_id\": 42,\n        \"sender_id\": 43,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 8,\n        \"message\": \"Commodi aut quis dolores ipsa atque. Et et omnis vitae quia. Sint omnis placeat consequuntur aspernatur. Omnis accusamus quaerat aperiam magni voluptas autem velit. Error sunt laudantium eligendi voluptas.\",\n        \"receiver_id\": 44,\n        \"sender_id\": 45,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 9,\n        \"message\": \"Qui quisquam corporis optio voluptatem id neque modi. Et facere at quasi blanditiis ratione sint. Consequatur rerum officiis beatae et totam.\",\n        \"receiver_id\": 46,\n        \"sender_id\": 47,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 10,\n        \"message\": \"Eos odio non suscipit animi nihil culpa qui dicta. Minima voluptas a sit qui omnis. Dolorem non id quo doloribus. Quibusdam praesentium officiis a fugit exercitationem.\",\n        \"receiver_id\": 48,\n        \"sender_id\": 49,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 11,\n        \"message\": \"Nam cum est praesentium qui et quidem eaque consequatur. Facere optio facilis dolor esse quo. Amet sit saepe voluptatem molestias sequi laboriosam.\",\n        \"receiver_id\": 50,\n        \"sender_id\": 51,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 12,\n        \"message\": \"Nisi est asperiores qui occaecati ut omnis id ducimus. Laudantium illum et sapiente labore aut. Repudiandae laboriosam sit qui. Adipisci consequatur natus laborum dolorem aspernatur ex sequi.\",\n        \"receiver_id\": 52,\n        \"sender_id\": 53,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 13,\n        \"message\": \"Consectetur numquam ut at. Deserunt omnis et fugit enim dolor quo quod. Nobis qui molestiae rerum rerum qui alias. Rerum asperiores rerum nemo saepe in dicta eveniet.\",\n        \"receiver_id\": 54,\n        \"sender_id\": 55,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 14,\n        \"message\": \"Dicta dolor dolorum reprehenderit ipsam ea quia. Praesentium repudiandae ipsum quaerat est voluptate. Facere vero harum rem iste autem provident. Facilis totam ut odit.\",\n        \"receiver_id\": 56,\n        \"sender_id\": 57,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 15,\n        \"message\": \"Sed pariatur consequuntur expedita cupiditate. Cumque vel ut rerum perspiciatis maxime. Rerum ad et eos placeat provident. Consequatur nulla voluptatum qui nostrum.\",\n        \"receiver_id\": 58,\n        \"sender_id\": 59,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 16,\n        \"message\": \"Non quo nihil ab suscipit vero. Nulla ducimus officia ea molestiae. Aliquid eaque debitis accusamus explicabo dolorum ut. Dolores omnis aliquam repudiandae porro reiciendis cum repudiandae qui.\",\n        \"receiver_id\": 60,\n        \"sender_id\": 61,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 17,\n        \"message\": \"Quas consequatur vitae et maiores omnis nam. Vel veritatis culpa ratione veritatis architecto. Qui et earum sint.\",\n        \"receiver_id\": 62,\n        \"sender_id\": 63,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 18,\n        \"message\": \"Alias laborum voluptates qui non. Omnis sint saepe voluptates qui perspiciatis. Vero sint nesciunt voluptates ipsum et. Consequatur dolores facilis culpa aut laborum.\",\n        \"receiver_id\": 64,\n        \"sender_id\": 65,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 19,\n        \"message\": \"Dignissimos quaerat adipisci assumenda. Tempora non non nihil. Qui qui alias quo veniam repudiandae ut dolor.\",\n        \"receiver_id\": 66,\n        \"sender_id\": 67,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    },\n    {\n        \"id\": 20,\n        \"message\": \"Amet qui non in et numquam non ea et. Soluta repudiandae cupiditate voluptas est voluptates ad.\",\n        \"receiver_id\": 68,\n        \"sender_id\": 69,\n        \"created_at\": \"2021-04-02T09:17:27.000000Z\",\n        \"updated_at\": \"2021-04-02T09:17:27.000000Z\"\n    }\n]"
+				},
+				{
+					"name": "own messages",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{api_url}}/messages",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:19:36 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:19:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 21,\n        \"message\": \"Quia assumenda qui quia sequi. Tempore nobis consequatur quia eos nisi.\",\n        \"receiver_id\": 70,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 22,\n        \"message\": \"Qui ut esse doloribus est sequi. Ad vel officiis amet error tempore quia sunt. Tempore totam est labore esse blanditiis. Corporis sed sit dolore sint pariatur deleniti laborum hic.\",\n        \"receiver_id\": 71,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 23,\n        \"message\": \"Explicabo impedit nemo esse sed voluptatem. Officia eligendi necessitatibus excepturi veniam vero ratione modi. Facilis porro maiores ut iste eum consequatur consectetur.\",\n        \"receiver_id\": 72,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 24,\n        \"message\": \"Explicabo vel inventore iste sunt accusamus aut. Et quibusdam in facere quia. Sunt quasi dignissimos qui nihil consequatur modi et. Omnis vitae qui quo animi dolor aut.\",\n        \"receiver_id\": 73,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 25,\n        \"message\": \"Omnis sint assumenda aut reiciendis iusto commodi. Ullam fugit exercitationem velit rerum aut earum quisquam. Voluptatem repellat voluptas cum accusantium officia excepturi. Veritatis minus quo suscipit qui eum.\",\n        \"receiver_id\": 74,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 26,\n        \"message\": \"Unde ab occaecati accusamus doloribus. Modi porro non illum perspiciatis animi ducimus aperiam. Repudiandae perferendis expedita fugit.\",\n        \"receiver_id\": 75,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 27,\n        \"message\": \"Praesentium velit iste harum autem quos voluptates. Quis aut hic corrupti quas magnam perferendis quidem consequatur. Omnis similique nesciunt aliquid pariatur distinctio. Dolorem et vitae et dolorem sunt iste qui.\",\n        \"receiver_id\": 76,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 28,\n        \"message\": \"Unde dolorum ex aut culpa nemo. Quibusdam dolorem incidunt minus illum dignissimos. Quibusdam vel rerum dolores illo rerum perspiciatis. Saepe iste dolores libero voluptatem maxime reiciendis unde eaque.\",\n        \"receiver_id\": 77,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 29,\n        \"message\": \"Aut unde id et est quasi corrupti ea. Delectus est ex totam voluptatem. Vel est nihil optio ipsum sint. Enim fugiat autem consequuntur alias quia.\",\n        \"receiver_id\": 78,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 30,\n        \"message\": \"Aut doloribus ut nam culpa ducimus. Provident laudantium aperiam est non voluptas eius. Blanditiis reiciendis assumenda quod. Velit dignissimos illo officiis est repellendus sapiente.\",\n        \"receiver_id\": 79,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 31,\n        \"message\": \"Pariatur illo voluptas perspiciatis repellendus deleniti. Sunt quae quis repellendus ratione sit. Ut tempora nihil alias eligendi numquam dolores placeat.\",\n        \"receiver_id\": 80,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 32,\n        \"message\": \"Sit harum dolorem soluta voluptatum nihil. Itaque aut et aut. Ut accusantium necessitatibus sint animi. Explicabo adipisci vero atque eos laboriosam.\",\n        \"receiver_id\": 81,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 33,\n        \"message\": \"Quam nobis ab quod. Est ut exercitationem recusandae quaerat eos eos. Est fugiat voluptate dolores rerum sequi veniam. Quae natus atque mollitia.\",\n        \"receiver_id\": 82,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 34,\n        \"message\": \"Totam sunt qui eaque repudiandae. Vitae qui voluptatem qui ea asperiores officiis necessitatibus. Ut vel occaecati iusto pariatur ut ullam. Recusandae exercitationem voluptas repellendus voluptatem.\",\n        \"receiver_id\": 83,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 35,\n        \"message\": \"Explicabo explicabo sunt omnis. Porro temporibus et aut ut. Et quis quod nobis amet. Minus aut laboriosam dolorum quasi.\",\n        \"receiver_id\": 84,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 36,\n        \"message\": \"Perferendis nesciunt ut ab reprehenderit. Optio quam dolor itaque soluta et. Est voluptatibus quasi quis qui laborum ipsum.\",\n        \"receiver_id\": 85,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 37,\n        \"message\": \"Recusandae sequi ut eaque fugit facilis dolores. Quis velit ut laboriosam aliquam. Optio cum et ex repellendus quaerat rerum. Accusantium totam rerum vel veniam maiores voluptatem eius sed.\",\n        \"receiver_id\": 86,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 38,\n        \"message\": \"Officiis voluptas excepturi dolorem sit est amet reiciendis. Explicabo dolorem eius nihil quasi omnis ab. Adipisci possimus aliquam voluptatem.\",\n        \"receiver_id\": 87,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 39,\n        \"message\": \"Quia incidunt corrupti quisquam magnam provident laborum. Et autem occaecati et quasi autem. Atque minus eaque quam est eum debitis.\",\n        \"receiver_id\": 88,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    },\n    {\n        \"id\": 40,\n        \"message\": \"Qui blanditiis facilis quidem est quia. Iusto dolores sapiente vitae explicabo tempora ut. Et natus et doloribus qui saepe enim omnis. Consequatur quia alias in earum sint.\",\n        \"receiver_id\": 89,\n        \"sender_id\": 4,\n        \"created_at\": \"2021-04-02T09:19:30.000000Z\",\n        \"updated_at\": \"2021-04-02T09:19:30.000000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "send message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "message",
+							"value": "hello there",
+							"description": "required|string",
+							"type": "text"
+						},
+						{
+							"key": "receiver_id",
+							"value": "26",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/message",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "customer to doesnt exists user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "hello guys",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "999",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/message",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:28:44 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:28:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No query results for model [App\\\\Models\\\\User] 999\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Exceptions\\\\Handler.php\",\n    \"line\": 381,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Exceptions\\\\Handler.php\",\n            \"line\": 330,\n            \"function\": \"prepareException\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Exceptions\\\\Handler\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Pipeline.php\",\n            \"line\": 51,\n            \"function\": \"render\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Exceptions\\\\Handler\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 130,\n            \"function\": \"handleException\",\n            \"class\": \"Illuminate\\\\Routing\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\app\\\\Http\\\\Middleware\\\\UserTypeMiddleware.php\",\n            \"line\": 23,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\UserTypeMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 103,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 55,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 44,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 34,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 697,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 672,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 636,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 625,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 166,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fideloper\\\\proxy\\\\src\\\\TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 141,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 110,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\public\\\\index.php\",\n            \"line\": 52,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\server.php\",\n            \"line\": 21,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "cust to staff (failed)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "hi staff",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "26",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/message",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:27:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:27:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You don't have permission to access this resource.\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Application.php\",\n    \"line\": 1116,\n    \"trace\": [\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\helpers.php\",\n            \"line\": 64,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\app\\\\Http\\\\Controllers\\\\Api\\\\MessageController.php\",\n            \"line\": 31,\n            \"function\": \"abort_if\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Controller.php\",\n            \"line\": 54,\n            \"function\": \"sendMessage\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\Api\\\\MessageController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 254,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Route.php\",\n            \"line\": 197,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 695,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\app\\\\Http\\\\Middleware\\\\UserTypeMiddleware.php\",\n            \"line\": 23,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"App\\\\Http\\\\Middleware\\\\UserTypeMiddleware\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 103,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests.php\",\n            \"line\": 55,\n            \"function\": \"handleRequestUsingNamedLimiter\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Auth\\\\Middleware\\\\Authenticate.php\",\n            \"line\": 44,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 33,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\{closure}\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\sanctum\\\\src\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful.php\",\n            \"line\": 34,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Laravel\\\\Sanctum\\\\Http\\\\Middleware\\\\EnsureFrontendRequestsAreStateful\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 697,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 672,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 636,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Routing\\\\Router.php\",\n            \"line\": 625,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 166,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fruitcake\\\\laravel-cors\\\\src\\\\HandleCors.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\fideloper\\\\proxy\\\\src\\\\TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Pipeline\\\\Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 141,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\vendor\\\\laravel\\\\framework\\\\src\\\\Illuminate\\\\Foundation\\\\Http\\\\Kernel.php\",\n            \"line\": 110,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\public\\\\index.php\",\n            \"line\": 52,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"C:\\\\laragon\\\\www\\\\keda\\\\server.php\",\n            \"line\": 21,\n            \"function\": \"require_once\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "staff send to customer (success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "yo whats up?",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "5",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/message",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:21:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:21:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"yo whats up?\",\n    \"receiver_id\": \"5\",\n    \"sender_id\": 4,\n    \"updated_at\": \"2021-04-02T09:21:30.000000Z\",\n    \"created_at\": \"2021-04-02T09:21:30.000000Z\",\n    \"id\": 41\n}"
+				},
+				{
+					"name": "cust to customer (success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "hello guys",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "5",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/message",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:28:13 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:28:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"hello guys\",\n    \"receiver_id\": \"5\",\n    \"sender_id\": 3,\n    \"updated_at\": \"2021-04-02T09:28:13.000000Z\",\n    \"created_at\": \"2021-04-02T09:28:13.000000Z\",\n    \"id\": 44\n}"
+				},
+				{
+					"name": "staff to other staff (success)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "message",
+									"value": "hello there",
+									"description": "required|string",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "26",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/message",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"message"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:23:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:23:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"hello there\",\n    \"receiver_id\": \"26\",\n    \"sender_id\": 4,\n    \"updated_at\": \"2021-04-02T09:23:30.000000Z\",\n    \"created_at\": \"2021-04-02T09:23:30.000000Z\",\n    \"id\": 43\n}"
+				}
+			]
+		},
+		{
+			"name": "send report/feedback",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "message",
+							"value": "hello there",
+							"description": "required|string",
+							"type": "text"
+						},
+						{
+							"key": "receiver_id",
+							"value": "26",
+							"description": "required",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{api_url}}/message",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "customer report other customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "is_bug",
+									"value": "1",
+									"description": "nullable|boolean",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "reported_customer_id",
+									"value": "26",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "feedback",
+									"value": "lorem ipsum",
+									"description": "required|string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/report",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"report"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:33:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:33:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reported_customer_id\": \"26\",\n    \"feedback\": \"lorem ipsum\",\n    \"is_bug\": false,\n    \"customer_id\": 3,\n    \"updated_at\": \"2021-04-02T09:33:23.000000Z\",\n    \"created_at\": \"2021-04-02T09:33:23.000000Z\",\n    \"id\": 2\n}"
+				},
+				{
+					"name": "cust report their ow feedback",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "is_bug",
+									"value": "1",
+									"description": "nullable|boolean",
+									"type": "text"
+								},
+								{
+									"key": "reported_customer_id",
+									"value": "26",
+									"description": "required",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "feedback",
+									"value": "punten, bug di bagian kiri bawah kanan atas min",
+									"description": "required|string",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{api_url}}/report",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"report"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:36:29 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Apr 2021 09:36:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.16"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"reported_customer_id\": null,\n    \"feedback\": \"punten, bug di bagian kiri bawah kanan atas min\",\n    \"is_bug\": true,\n    \"customer_id\": 3,\n    \"updated_at\": \"2021-04-02T09:36:29.000000Z\",\n    \"created_at\": \"2021-04-02T09:36:29.000000Z\",\n    \"id\": 3\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "localhost:8000/api"
+		},
+		{
+			"key": "access_token",
+			"value": "2|1abZ8uY92NTm3OWrqPBnGXoJwnys8EnaQalZzG9q"
+		},
+		{
+			"key": "customer_id",
+			"value": "3"
+		}
+	]
+}
