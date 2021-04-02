@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::middleware('user_type:Staff')->group(function () {
         Route::apiResource('customer', CustomerController::class)->only(['index', 'destroy']);
+    });
+
+    Route::middleware('user_type:Staff,Customer')->group(function () {
+        Route::post('message', [MessageController::class, 'sendMessage']);
     });
 });

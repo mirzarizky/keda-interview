@@ -11,16 +11,19 @@ class UserTypeMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param Request $request
+     * @param Closure $next
+     * @param mixed ...$types
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, string $type)
+    public function handle(Request $request, Closure $next, ...$types)
     {
-        if ($request->user()->type->name != $type) {
-            abort(403, 'You don\'t have permission to access this resource.');
+        foreach ($types as $type) {
+            if ($request->user()->type->name == $type) {
+                return $next($request);
+            }
         }
 
-        return $next($request);
+        abort(403, 'You don\'t have permission to access this resource.');
     }
 }

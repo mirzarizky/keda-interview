@@ -25,6 +25,12 @@ class User extends Authenticable
 
     protected $with = ['type'];
 
+    // Helpers
+    public function isStaff()
+    {
+        return ($this->user_type_id == 2);
+    }
+
     // Scopes
     public function scopeTypeCustomer($query)
     {
