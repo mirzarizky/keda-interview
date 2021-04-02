@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\CustomerFeedbackController;
 use App\Http\Controllers\Api\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('all-messages', [MessageController::class, 'getAllMessages']);
     });
 
+    Route::middleware('user_type:Customer')->group(function () {
+        Route::post('report', [CustomerFeedbackController::class, 'sendFeedback']);
+    });
     Route::middleware('user_type:Staff,Customer')->group(function () {
         Route::get('messages', [MessageController::class, 'index']);
         Route::post('message', [MessageController::class, 'sendMessage']);
